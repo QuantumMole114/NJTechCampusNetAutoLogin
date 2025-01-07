@@ -7,7 +7,7 @@
 LOGFILE="/data/runlog.txt"
 
 # 在 URL 中，username/password/MAC 都是写死的
-# 唯一要动态替换的 IP 用 10.40.211.97
+# 唯一要动态替换的 IP 用 __IP__
 LOGIN_URL="http://10.50.255.11:801/eportal/portal/login?callback=dr1003&login_method=1&user_account=,1,202400000000@telecom&user_password=1234567890&wlan_user_ip=__IP__&wlan_user_ipv6=&wlan_user_mac=000000000000&wlan_ac_ip=&wlan_ac_name=&jsVersion=4.1.3&terminal_type=1&lang=zh-cn&v=1640&lang=zh"
 
 echo "************** 开始执行 login.sh **************"
