@@ -1,0 +1,2 @@
+# NJTechCampusNetAutoLogin
+南京工业大学校园网路由器自动登录脚本
