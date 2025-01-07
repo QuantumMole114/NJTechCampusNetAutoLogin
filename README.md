@@ -100,3 +100,26 @@ dr1003({"result":1,"msg":"Portal协议认证成功！"});[2025-01-07 22:50:12] �
 如果你和我一样是小米原厂固件，无法通过编辑rc.local来进行开机运行脚本，那么你可以参照以下帖子的前半部分创建自动开机脚本
 
 [**小米官方固件添加自启动脚本方法**](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8340357)
+
+在你创建好的 `startup_script.sh` 中，你需要将`startup_script()`修改为以下内容：
+
+```bash
+startup_script() {
+        # Put your custom script here.
+        echo "Starting custom scripts..." >> /data/autoLogin.log
+        echo "Start time: $(date)" >> /data/autoLogin.log
+
+        chmod +x /data/autoLogin.sh >> /data/autoLogin.log 2>&1
+        chmod +x /data/login.sh >> /data/autoLogin.log 2>&1
+        chmod +x /data/login_base.sh >> /data/autoLogin.log 2>&1
+        
+        echo "Permissions set." >> /data/autoLogin.log
+
+        sleep 90
+        echo "Executing autoLogin.sh..." >> /data/autoLogin.log
+        sh /data/autoLogin.sh >> /data/autoLogin.log 2>&1 &
+}
+```
+
+### 有问题或者建议欢迎在issue中讨论，或者添加我的QQ3287554459
+
