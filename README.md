@@ -63,6 +63,8 @@ IP=$(ip addr show eth0.1 | grep "inet " | awk '{print $2}' | cut -d'/' -f1)
 
 此处我的路由器wan口接口名为eth0.1，请自行查询你的wan口接口名称并替换
 
+------
+
 > [!NOTE]
 >
 > 首次使用，请将你编辑好的`login_base.sh`的内容复制到`login.sh`中
